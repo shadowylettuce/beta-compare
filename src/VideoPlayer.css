@@ -1,0 +1,59 @@
+.video-player {
+    background-color: #1a1a1a;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 45%;
+}
+
+/* padding - padding is space inside the element between content and the element's own border */
+/* This activates flexbox a CSS layout system that enables other functions such as flex-direction */
+/* gap - space between child elements inside the flex container */
+/* width: 45% - the player takes up 45% of its parent container's width*/
+
+.video-element {
+    width: 100%;
+    border-radius: 8px;
+}
+
+/* width container here means the video fills 100% of the video player container it sits inside*/
+
+.speed-controls {
+    display: flex;
+    gap: 8px;
+}
+
+.speed-controls button {
+    flex: 1;
+    padding: 8px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.speed-controls button:hover {
+    background-color: #3a3a3a;
+}
+
+.bookmark-btn {
+    width: 100%;
+    padding: 8px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.bookmark-btn:hover {
+    background-color: #3a3a3a;
+}
+
+ul {
+    width: 100%;
+    list-style: none;
+}
