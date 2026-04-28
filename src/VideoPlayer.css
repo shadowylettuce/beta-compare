@@ -56,4 +56,33 @@
 ul {
     width: 100%;
     list-style: none;
+    padding: 0;
+    display: flex; /* This enables elements to be arranged horizontally */
+    flex-wrap: wrap; /* This is what makes the buttons go to the next line when there are too many on screen*/
+    gap: 8px;
+}
+
+ul li button {
+    padding: 8px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer; /* This changes the cursore to a hand when hovering over the button */
+}
+
+.upload-btn {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    background-color: #2a2a2a;
+    color: #ffffff;
+    border: 1px solid #444;
+    border-radius: 6px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.upload-btn:hover {
+    background-color: #3a3a3a;
 }

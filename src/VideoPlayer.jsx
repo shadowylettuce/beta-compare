@@ -23,7 +23,19 @@ function VideoPlayer(){ // Creating a function called VideoPlayer that creates a
 
     return ( 
         <div className = "video-player">
-            <input type = "file" accept = "video/*" onChange = {handleFileChange}/>
+            <div className = "upload-area">
+                <input
+                    type = "file"
+                    accept = "video/*"
+                    onChange = {handleFileChange}
+                    id = "file-input"
+                    style={{display: 'none'}} // This is what hides the default file input button
+                />
+                <label htmlFor = "file-input" className= "upload-btn"> {/* Clicking a label triggers the linked input, opens file picker */}
+                    {videoSrc ? '📁 Change Video' : '📁 Upload Video'} {/* This is a ternary operater, if there is a video, show change video, else show upload video */}
+                </label>
+            </div>
+            
             <video ref = {videoRef} src = {videoSrc} controls className = "video-elemet"/>
             <div className = "speed-controls">
             <button onClick = {() => handleSpeedChange(0.25)}>0.25x</button>
@@ -32,12 +44,12 @@ function VideoPlayer(){ // Creating a function called VideoPlayer that creates a
             <button onClick = {() => handleSpeedChange(1.0)}>1x</button>
             </div>
             <div className = "bookmark-section">
-                <button className = "bookmark-btn onClick = {() => handleBookmark()}>+ Bookmark">Bookmark</button>
+                <button className = "bookmark-btn" onClick = {() => handleBookmark()}>Bookmark</button>
                 <ul>
                     {bookmarks.map((time, index) => (
                         <li key = {index}>
                             <button onClick = {() => videoRef.current.currentTime = time}>
-                                {time.toFixed(2)}s
+                                Bookmark {index + 1}: {time.toFixed(2)}s
                             </button>
                         </li>
                     ))}
