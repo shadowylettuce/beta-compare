@@ -6,8 +6,8 @@ function App() {
     <div>
       <h1>Beta Compare</h1>
       <div className = "video-container">
-        <VideoPlayer />
-        <VideoPlayer />
+        <VideoPlayer inputId = "file-input1"/>
+        <VideoPlayer inputId = "file-input2"/>
       </div>
     </div>
   )

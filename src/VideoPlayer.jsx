@@ -1,7 +1,7 @@
 import './VideoPlayer.css'
 import { useState, useRef } from 'react' // Importing useState and useRef functions from React library
 
-function VideoPlayer(){ // Creating a function called VideoPlayer that creates a reusable component that renders a single video player with upload, speed control and bookmark functionality
+function VideoPlayer({ inputId }){ // Creating a function called VideoPlayer that creates a reusable component that renders a single video player with upload, speed control and bookmark functionality
     const [videoSrc, setVideoSrc] = useState(null) // useState(null) returns two things, a value and an updater function, here you are unpacking what useState gives back. videoSrc holds the video URL and null means no video loaded yet
     const videoRef = useRef(null) // useRef gives access to the video DOM elemetn so playback speed and current time can be controlled from JS
     const [bookmarks, setBookmarks] = useState([]) // Create a const that sets bookmarks to an empty list and calls the updater function
@@ -28,10 +28,10 @@ function VideoPlayer(){ // Creating a function called VideoPlayer that creates a
                     type = "file"
                     accept = "video/*"
                     onChange = {handleFileChange}
-                    id = "file-input"
+                    id = {inputId}
                     style={{display: 'none'}} // This is what hides the default file input button
                 />
-                <label htmlFor = "file-input" className= "upload-btn"> {/* Clicking a label triggers the linked input, opens file picker */}
+                <label htmlFor = {inputId} className= "upload-btn"> {/* Clicking a label triggers the linked input, opens file picker */}
                     {videoSrc ? '📁 Change Video' : '📁 Upload Video'} {/* This is a ternary operater, if there is a video, show change video, else show upload video */}
                 </label>
             </div>

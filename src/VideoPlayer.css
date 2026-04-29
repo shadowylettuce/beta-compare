@@ -6,6 +6,7 @@
     flex-direction: column;
     gap: 10px;
     width: 45%;
+    max-width: 100%;
 }
 
 /* padding - padding is space inside the element between content and the element's own border */
